@@ -1,0 +1,236 @@
+
+html{
+  background-color: #F4F6F7;
+  height : 100%;
+}
+
+body{
+  max-width: 1200px;
+  margin: auto;
+  background-color: white;
+  border-left: 1px solid lightblue;
+  border-right: 1px solid lightblue;
+  min-height: 100%;
+  margin: auto;
+  padding:0;
+  text-decoration : none;
+
+  display : flex;
+  flex-direction : column;
+
+  font-family: 'Roboto',Arial,sans-serif;
+}
+
+
+h1{
+  font-size : 1.8em;
+  color : rgb(90, 90, 90);
+  text-align : left;
+}
+h2{
+  text-align : center;
+  font-size : 1.5em;
+  color : rgb(90, 90, 90);
+}
+p{
+  font-size : 1em;
+}
+
+
+
+label{
+  text-align : left;
+}
+
+input, textarea{
+  border : 1px solid lightgrey;
+  padding : 8px;
+  border-radius : 5px;
+  margin-top : 5px;
+  margin-bottom : 5px;
+  width : calc(100% - 20px);
+  font-size : 1em;
+}
+
+select{
+  border : 1px solid lightgrey;
+  border-radius : 5px;
+  padding : 3px 7px;
+  font-size : 1em;
+  background-color: #fff;
+  box-shadow: none;
+}
+
+textarea{
+  resize: none;
+}
+
+#etudiant, #professeur, #salarie, #entreprise {
+  width: auto;
+}
+
+.inputRadioButton{
+  width:1%;
+}
+
+button{
+  border-radius : 5px;
+  color : white;
+  background-color: #b60e1b;
+  border : none;
+  font-weight : bold;
+  font-size : 1em;
+  padding : 5px 15px;
+
+  margin : 5px 15px;
+  width : 100%;
+}
+
+
+
+
+table{
+  position : center;
+  margin : 10px 0px;
+  border-collapse: collapse;
+  width: 100%;
+  margin-top : 20px;
+}
+table thead{
+  border : 1px solid #b60e1b;
+}
+table thead th{
+  background-color : #b60e1b;
+  color : white;
+  font-weight : bold;
+  padding : 5px;
+  text-align : left;
+}
+table tbody{
+  border: 1px solid black;
+}
+table tbody td{
+  padding : 5px;
+}
+
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+
+
+/* Header */
+header{
+  padding:15px;
+  border-bottom: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  background-color: #001233;
+  text-align : center;
+}
+header img{
+  height : 100px;
+}
+header div {
+  text-align : center;
+}
+header div h2{
+  color : rgb(90, 90, 90);
+}
+
+header a {
+  background-color : #b60e1b;
+  color:white;
+  font-weight: bold;
+  padding : 10px 15px 10px 15px;
+  border-radius : 5px;
+}
+
+
+
+/* Nav */
+nav{
+  background-color :#b60e1b;
+}
+nav ul{
+  display : flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items : stretch;
+  align-content : stretch;
+
+  list-style-type: none;
+  text-decoration : none;
+  padding : 0;
+}
+nav ul li{
+  float : center;
+}
+nav ul li a{
+  text-decoration : none;
+  color : white;
+  font-weight:bold;
+  padding : 15px 20px;
+}
+
+li a:hover {
+  background-color: rgb(124, 18, 18);
+}
+
+
+
+/* Main */
+main{
+  padding: 10px 20px;
+  flex-grow:1;
+}
+main ul{
+  display : flex;
+  justify-content : flex-end;
+  text-decoration : none;
+  list-style-type: none;
+  flex-wrap: wrap;
+  margin-top : 10px;
+}
+main ul li{
+  margin-top : 20px;
+}
+main ul li a{
+  padding : 7px 10px;
+
+  margin-top : 5px;
+  margin-left : 10px;
+  background-color : rgb(90, 90, 90);
+  color : white;
+  border-radius : 5px;
+  text-decoration : none;
+}
+
+
+
+
+/* Footer */
+footer{
+  background-color: #b60e1b;
+}
+footer nav ul{
+  display : flex;
+  justify-content: space-around;
+  flex-wrap : wrap;
+}
+
+
+.offre{
+  border : 1px solid lightgrey;
+  border-radius : 5px;
+  padding : 10px;
+  margin : 20px 0px;
+}
+
+.filtre{
+  background-color: lightgrey;
+  padding : 10px;
+}
+
+.imageSvg{
+  height : 15px;
+}

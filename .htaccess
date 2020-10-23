@@ -1,0 +1,7 @@
+Options +FollowSymlinks
+RewriteEngine On
+
+RewriteRule ^mentions-legales$ index.php?page=73
+RewriteRule ^contact$ index.php?page=35
+RewriteRule ^cgu$ index.php?page=30
+RewriteRule ^politique-confidentialite$ index.php?page=37 [L]
