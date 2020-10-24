@@ -1,21 +1,21 @@
 <?php
-class UniversManager{
+class GenreManager{
 
     public function __construct($db){
         $this->db=$db;
     }
 
-    public function getListeUnivers(){
-        $sql = 'SELECT * from univers order by name asc';
+    public function getListeGenre(){
+        $sql = 'SELECT * from genre order by name asc';
         $req=$this->db->prepare($sql);
         $req->execute();
 
-        $listeUnivers = array();
+        $listeGenre = array();
         while ($res = $req->fetch(PDO::FETCH_OBJ)){
-            $listeUnivers[] = new Univers($res);
+            $listeGenre[] = new Genre($res);
         }
         $req->closeCursor();
 
-        return $listeUnivers;
+        return $listeGenre;
     }
 }

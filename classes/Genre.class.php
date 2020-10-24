@@ -1,10 +1,9 @@
 <?php
 
-class Univers{
+class Genre{
 
   private $id;
   private $name;
-  private $description;
 
 
   public function __construct($valeurs = array()){
@@ -22,8 +21,6 @@ class Univers{
         case 'name': $this->setName($valeur);
             break;
 
-        case 'description': $this->setDescription($valeur);
-            break;
       }
     }
   }
@@ -34,9 +31,7 @@ class Univers{
   public function getName(){
     return $this->name;
   }
-  public function getDescription(){
-    return $this->description;
-  }
+
 
 
   public function setId($id){
@@ -45,9 +40,7 @@ class Univers{
   public function setName($name){
     $this->name=$name;
   }
-  public function setDescription($description){
-    $this->description=$description;
-  }
+
 
 }
 

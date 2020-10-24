@@ -7,6 +7,9 @@ require_once("include/autoLoad.inc.php");
 
 <?php
 $db = new MyPdo();
+$universManager=new UniversManager($db);
+$genreManager=new GenreManager($db);
+
 
 ?>
 
