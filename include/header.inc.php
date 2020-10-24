@@ -15,8 +15,8 @@
   <?php
   }
   else{ ?>
-    <h2>Mon compte</h2>
-    <a href="index.php?page=12" class="boutonInscription">Connexion/Inscription</a>
+
+    <a href="index.php?page=12">   <img src="image/login.svg" alt=""></a>
   <?php
   } ?>
 </div>

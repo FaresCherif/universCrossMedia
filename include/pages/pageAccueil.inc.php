@@ -1,4 +1,4 @@
-<h1>Découvrez les meilleur univers de notre ère </h1>
+<h1>Découvrez les meilleurs univers de notre ère </h1>
 <br>
 
 <section>
