@@ -9,6 +9,27 @@ html{
 
 }
 
+.bouttonChoixAccueil{
+  display: flex;
+}
+
+.bouttonChoixAccueil button{
+  height:500px;
+  width:500px;
+  margin : auto;
+}
+
+.bouttonChoixAccueil #videoGame{
+  background-image: url("../image/accueil/videogames.jpg");
+  background-size:cover;
+  background-repeat: no-repeat;
+}
+
+.bouttonChoixAccueil #cinema{
+  background-image: url("../image/accueil/cinema.jpg");
+  background-size:cover;
+  background-repeat: no-repeat;
+}
 body{
   max-width: 1200px;
   margin: auto;
@@ -80,7 +101,7 @@ textarea{
 button{
   border-radius : 5px;
   color : white;
-  background-color: #b60e1b;
+  background-color: #001233;
   border : none;
   font-weight : bold;
   font-size : 1em;

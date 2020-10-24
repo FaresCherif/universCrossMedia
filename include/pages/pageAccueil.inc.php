@@ -1,5 +1,10 @@
-<h1>Découvrez les meilleurs univers de notre ère </h1>
-<br>
+
+
+<div class="bouttonChoixAccueil">
+  <button id="cinema">film</button>
+  <button id="videoGame">jeux video</button>
+</div>
+
 
 <section>
 
