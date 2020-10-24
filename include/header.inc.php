@@ -1,6 +1,8 @@
 
-<img src="image/logo.png" alt="">
 
+
+<img src="image/logo.png" alt="">
+<textarea></textarea>
 <div>
   <?php
   if(utilisateurEstConnecte()){ ?>
