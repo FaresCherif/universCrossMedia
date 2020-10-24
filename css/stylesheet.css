@@ -12,6 +12,10 @@ html{
 .bouttonChoixAccueil{
   display: flex;
 }
+.bouttonChoixAccueil p{
+  background-color: #001233;
+  color: white;
+}
 
 .bouttonChoixAccueil button{
   height:500px;
@@ -30,6 +34,7 @@ html{
   background-size:cover;
   background-repeat: no-repeat;
 }
+
 body{
   max-width: 1200px;
   margin: auto;

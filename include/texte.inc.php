@@ -11,6 +11,14 @@ switch ($page) {
 		include_once('pages/pageAccueil.inc.php');
 	break;
 
+	case 1:
+		include_once('pages/pageAccueilFilm.inc.php');
+	break;
+
+	case 2:
+		include_once('pages/pageAccueilJeuVideo.inc.php');
+	break;
+
 	default : include_once('pages/pageAccueil.inc.php');
 }
 
