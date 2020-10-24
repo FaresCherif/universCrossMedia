@@ -2,7 +2,7 @@
 
 class Genre{
 
-  private $id;
+  private $ID;
   private $name;
 
 
@@ -15,7 +15,7 @@ class Genre{
   public function affecte($donnees){
     foreach($donnees as $attribut => $valeur){
       switch ($attribut){
-        case 'id': $this->setId($valeur);
+        case 'ID': $this->setId($valeur);
             break;
 
         case 'name': $this->setName($valeur);
@@ -26,8 +26,9 @@ class Genre{
   }
 
   public function getId(){
-    return $this->id;
+    return $this->ID;
   }
+
   public function getName(){
     return $this->name;
   }
@@ -35,7 +36,7 @@ class Genre{
 
 
   public function setId($id){
-    $this->id=$id;
+    $this->ID=$id;
   }
   public function setName($name){
     $this->name=$name;

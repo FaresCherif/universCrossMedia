@@ -7,8 +7,9 @@ $listeGenre =$genreManager->getListeGenre();
 <h2> Genre </h2>
 
 <?php
-foreach ($listeGenre as $genre){
-  echo($genre->getName());?><br><?php
+foreach ($listeGenre as $genre){?>
+  <a href="index.php?page=3&genre=<?php echo $genre->getId() ?>">
+  <?php echo($genre->getName()) ?><br></a><?php
 }
 ?>
 
