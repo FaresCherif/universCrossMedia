@@ -5,6 +5,7 @@ class Univers{
   private $ID;
   private $name;
   private $description;
+  private $image;
 
 
   public function __construct($valeurs = array()){
@@ -24,6 +25,9 @@ class Univers{
 
         case 'description': $this->setDescription($valeur);
             break;
+
+        case 'image': $this->setImage($valeur);
+          break;
       }
     }
   }
@@ -37,6 +41,9 @@ class Univers{
   public function getDescription(){
     return $this->description;
   }
+  public function getImage(){
+    return $this->image;
+  }
 
 
   public function setId($id){
@@ -47,6 +54,9 @@ class Univers{
   }
   public function setDescription($description){
     $this->description=$description;
+  }
+  public function setImage($image){
+    $this->image=$image;
   }
 
 }

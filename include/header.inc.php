@@ -1,7 +1,7 @@
 
 
-
-<img src="image/logo.png" alt="">
+<a href="index.php?page=0">
+<img src="image/logo.png" alt=""></a>
 <textarea></textarea>
 <div>
   <?php

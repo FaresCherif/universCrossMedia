@@ -1,6 +1,7 @@
 <?php
 $listeFilm=$filmManager->getListeFilmGenre($_GET['genre']);
 
+
 if($listeFilm!=null){
   foreach ($listeFilm as $film){?>
     <a href="index.php?page=5&film=<?php echo $film->getId() ?>">

@@ -33,7 +33,7 @@ switch ($page) {
 
 
 
-	default : include_once('pages/pageAccueil.inc.php');
+	default : include_once('pages/Accueil.inc.php');
 }
 
 ?>

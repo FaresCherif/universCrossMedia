@@ -18,4 +18,17 @@ class UniversManager{
 
         return $listeUnivers;
     }
+
+    public function getUnivers($id_Univers){
+        $sql = 'SELECT * from univers where ID=:id_Univers order by name asc';
+        $req=$this->db->prepare($sql);
+        $req->bindValue(':id_Univers', $id_Univers);
+
+        $req->execute();
+
+        $res = $req->fetch(PDO::FETCH_OBJ);
+
+        return new Univers($res);
+    }
+
 }
