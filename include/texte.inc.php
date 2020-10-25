@@ -23,6 +23,12 @@ switch ($page) {
 		include_once('pages/pageGenreFilm.inc.php');
 		break;
 
+	case 4:
+		include_once('pages/pageUniversFilm.inc.php');
+		break;
+
+
+
 	default : include_once('pages/pageAccueil.inc.php');
 }
 

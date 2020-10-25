@@ -15,8 +15,9 @@ foreach ($listeGenre as $genre){?>
 
 <h2> Univers </h2>
 <?php
-foreach ($listeUnivers as $univers){
-  echo($univers->getName());?><br><?php
+foreach ($listeUnivers as $univers){?>
+  <a href="index.php?page=4&univers=<?php echo $univers->getId() ?>"><?php
+  echo($univers->getName());?></a><br><?php
 }
 
 
