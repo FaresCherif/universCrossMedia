@@ -51,4 +51,17 @@ class FilmManager{
 
         return $listeFilm;
     }
+
+
+    public function getFilm($id_Film){
+        $sql = 'SELECT * from film where ID=:id_film ';
+        $req=$this->db->prepare($sql);
+        $req->bindValue(':id_film', $id_Film);
+
+        $req->execute();
+
+        $res = $req->fetch(PDO::FETCH_OBJ);
+
+        return new Film($res);
+    }
 }

@@ -4,6 +4,18 @@ html{
   background-repeat: no-repeat;
 }
 
+.filmDescription img{
+    width : 500px;
+    height : 500px;
+}
+
+.filmDescription p{
+    margin-left: 10px;
+}
+
+.filmDescription{
+    display: flex;
+}
 
 .univers img{
   width:100%;

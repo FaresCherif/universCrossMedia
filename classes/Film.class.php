@@ -4,6 +4,8 @@ class Film{
 
   private $ID;
   private $name;
+  private $description;
+  private $image;
 
 
   public function __construct($valeurs = array()){
@@ -21,6 +23,11 @@ class Film{
         case 'name': $this->setName($valeur);
             break;
 
+        case 'description': $this->setDescription($valeur);
+            break;
+
+        case 'image': $this->setImage($valeur);
+            break;
       }
     }
   }
@@ -33,6 +40,14 @@ class Film{
     return $this->name;
   }
 
+  public function getDescription(){
+    return $this->description;
+  }
+
+  public function getImage(){
+    return $this->image;
+  }
+
 
 
   public function setId($id){
@@ -41,7 +56,13 @@ class Film{
   public function setName($name){
     $this->name=$name;
   }
+  public function setDescription($description){
+    $this->description=$description;
+  }
 
+  public function setImage($image){
+    $this->image=$image;
+  }
 
 }
 
