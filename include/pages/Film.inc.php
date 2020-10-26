@@ -16,16 +16,20 @@ $listeAvisFilm=$filmManager->getListeAvisFilm($_GET['film']);
 } ?><p><?php echo $film->getDescription() ?>
 </div>
 
+
+
+
+
 <?php if($_SESSION!=null){ ?>
 <div class="avisPerso">
   <p>Note : </p>
   <div class="rating rating2">
 
-      <a href="index.php?page=49&etoile=5" title="Give 5 stars" <?php {?>style="color: orange"<?php echo "x";} ?>>★</a>
-      <a href="index.php?page=49&etoile=4" title="Give 4 stars" <?php {?>style="color: orange"<?php echo "x";} ?>>★</a>
-      <a href="index.php?page=49&etoile=3" title="Give 3 stars" <?php {?>style="color: orange"<?php echo "x";} ?>>★</a>
-      <a href="index.php?page=49&etoile=2" title="Give 2 stars" <?php {?>style="color: orange"<?php echo "x";} ?>>★</a>
-      <a href="index.php?page=49&etoile=1" title="Give 1 stars" <?php {?>style="color: orange"<?php echo "x";} ?>>★</a>
+      <a href="index.php?page=49&etoile=5" title="Give 5 stars" <?php if($avisManager->avisExiste($_GET['film'],utilisateur()->getID())&&$avisManager->getAvis($_GET['film'],utilisateur()->getID())->getNote()==5||isset($_GET['etoile'])&&$_GET['etoile']==5){?>style="color: orange"<?php echo "x";} ?>>★</a>
+      <a href="index.php?page=49&etoile=4" title="Give 4 stars" <?php if($avisManager->avisExiste($_GET['film'],utilisateur()->getID())&&$avisManager->getAvis($_GET['film'],utilisateur()->getID())->getNote()>=4||isset($_GET['etoile'])&&$_GET['etoile']>=4){?>style="color: orange"<?php echo "x";} ?>>★</a>
+      <a href="index.php?page=49&etoile=3" title="Give 3 stars" <?php if($avisManager->avisExiste($_GET['film'],utilisateur()->getID())&&$avisManager->getAvis($_GET['film'],utilisateur()->getID())->getNote()>=3||isset($_GET['etoile'])&&$_GET['etoile']>=3){?>style="color: orange"<?php echo "x";} ?>>★</a>
+      <a href="index.php?page=49&etoile=2" title="Give 2 stars" <?php if($avisManager->avisExiste($_GET['film'],utilisateur()->getID())&&$avisManager->getAvis($_GET['film'],utilisateur()->getID())->getNote()>=2||isset($_GET['etoile'])&&$_GET['etoile']>=2){?>style="color: orange"<?php echo "x";} ?>>★</a>
+      <a href="index.php?page=49&etoile=1" title="Give 1 stars" <?php if($avisManager->avisExiste($_GET['film'],utilisateur()->getID())&&$avisManager->getAvis($_GET['film'],utilisateur()->getID())->getNote()>=1||isset($_GET['etoile'])&&$_GET['etoile']>=1){?>style="color: orange"<?php echo "x";} ?>>★</a>
 
    </div>
 </div>
@@ -59,7 +63,11 @@ foreach ($listeAvisFilm as $avis){
 
    <style type="text/css">
 
-
+   .rating2 a:hover,
+   .rating2 a:hover ~ a{
+       color: orange;
+       cursor: pointer;
+   }
 
        .rating a {
            color: #aaa;
