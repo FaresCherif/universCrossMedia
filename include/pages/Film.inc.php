@@ -10,8 +10,28 @@ $listeAvisFilm=$filmManager->getListeAvisFilm($_GET['film']);
 
  ?>
  <div class="filmDescription">
+
+  <?php if($film->getImage()!=null){?>
  <img src="image/film/<?php echo  $film->getImage()?>" alt=""><br><br><br><?php
-?><p><?php echo $film->getDescription() ?>
+} ?><p><?php echo $film->getDescription() ?>
+</div>
+
+<div class="avisPerso">
+  <p>Note : </p>
+  <div class="rating rating2">
+
+      <a href="index.php?page=49&etoile=5" title="Give 5 stars" <?php {?>style="color: orange"<?php echo "x";} ?>>★</a>
+      <a href="index.php?page=49&etoile=4" title="Give 4 stars" <?php {?>style="color: orange"<?php echo "x";} ?>>★</a>
+      <a href="index.php?page=49&etoile=3" title="Give 3 stars" <?php {?>style="color: orange"<?php echo "x";} ?>>★</a>
+      <a href="index.php?page=49&etoile=2" title="Give 2 stars" <?php {?>style="color: orange"<?php echo "x";} ?>>★</a>
+      <a href="index.php?page=49&etoile=1" title="Give 1 stars" <?php {?>style="color: orange"<?php echo "x";} ?>>★</a>
+
+   </div>
+</div>
+
+<div class="commentairePerso">
+  <p> Commentaire : </p>
+  <textarea></textarea>
 </div>
 
 <?php
@@ -47,6 +67,12 @@ foreach ($listeAvisFilm as $avis){
            color: orange;
            cursor: pointer;
        }
+       .rating2 {
+           direction: rtl;
+       }
+       .rating2 a {
+           float:none
+       }
 
 
    </style>
@@ -57,3 +83,5 @@ foreach ($listeAvisFilm as $avis){
   <?php
 
 }
+
+?>

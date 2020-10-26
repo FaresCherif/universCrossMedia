@@ -8,6 +8,20 @@ html{
   display: flex;
 }
 
+.commentairePerso textarea{
+  border-color: black;
+  height : 200px;
+}
+
+.avisPerso{
+  display: flex;
+}
+
+.rating2 {
+  margin-top: 14px;
+  margin-left: 20px;
+}
+
 .hautCommentaire .rating{
   margin-top: 20px;
   padding-left: 50px;
