@@ -64,4 +64,20 @@ class FilmManager{
 
         return new Film($res);
     }
+
+    public function getListeAvisFilm($idFilm){
+        $sql = 'SELECT * from film join avisutilisateur on film.ID=avisutilisateur.ID_film where avisutilisateur.ID_film=:id_film order by name asc';
+        $req=$this->db->prepare($sql);
+        $req->bindValue(':id_film', $idFilm);
+
+        $req->execute();
+
+        $listeAvis = array();
+        while ($res = $req->fetch(PDO::FETCH_OBJ)){
+            $listeAvis[] = new Avis($res);
+        }
+        $req->closeCursor();
+
+        return $listeAvis;
+    }
 }

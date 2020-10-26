@@ -4,6 +4,25 @@ html{
   background-repeat: no-repeat;
 }
 
+.commentaire{
+  background-color: #001233;
+  margin-top: 10px;
+  padding-bottom: 2px;
+  border-style : inset;
+  border-color: #001233;
+}
+
+.commentaire h1{
+  color : grey;
+  text-decoration: underline;
+  margin-left: 10px;
+}
+
+.commentaire p{
+  margin-left: 50px;
+  color: white;
+}
+
 .filmDescription img{
     width : 500px;
     height : 500px;

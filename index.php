@@ -10,6 +10,7 @@ $db = new MyPdo();
 $universManager=new UniversManager($db);
 $genreManager=new GenreManager($db);
 $filmManager=new FilmManager($db);
+$utilisateurManager=new UtilisateurManager($db);
 
 
 ?>
