@@ -4,6 +4,14 @@ html{
   background-repeat: no-repeat;
 }
 
+.hautCommentaire{
+  display: flex;
+}
+
+.hautCommentaire .rating{
+  margin-top: 20px;
+  padding-left: 50px;
+}
 .commentaire{
   background-color: #001233;
   margin-top: 10px;
