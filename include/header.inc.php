@@ -7,9 +7,8 @@
   <?php
   if(utilisateurEstConnecte()){ ?>
     <h2>
-      <?php echo utilisateur()->getPrenom()?> <?php echo utilisateur()->getNom()?>
+      <?php echo utilisateur()->getPseudo()?>
       <br>
-      <?php echo utilisateur()->getFonction()?>
     </h2>
     <a href="index.php?page=11" class="boutonInscription">Déconnexion</a>
   <?php

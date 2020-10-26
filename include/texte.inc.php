@@ -31,6 +31,14 @@ switch ($page) {
 		include_once('pages/Film.inc.php');
 		break;
 
+	case 11:
+		include_once('pages/deconnexion.inc.php');
+		break;
+		
+	case 12 :
+		include_once('pages/connexion.inc.php');
+		break;
+
 
 
 	default : include_once('pages/Accueil.inc.php');
