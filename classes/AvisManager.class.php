@@ -49,6 +49,18 @@ class AvisManager{
 
     }
 
+    public function ajouterNote($id_Film,$id_utilisateur,$note){
+        $sql = 'INSERT INTO avisUtilisateur (ID_film,ID_utilisateur,note) VALUES(:id_film,:id_utilisateur,:note)  ';
+        $req=$this->db->prepare($sql);
+        $req->bindValue(':id_film', $id_Film);
+        $req->bindValue(':id_utilisateur', $id_utilisateur);
+        $req->bindValue(':note', $note);
+
+
+        $req->execute();
+
+    }
+
     public function updateCommentaire($id_Film,$id_utilisateur,$commentaire){
         $sql = 'UPDATE avisUtilisateur SET commentaire=:commentaire  where ID_film=:id_film and ID_utilisateur=:id_utilisateur';
         $req=$this->db->prepare($sql);
