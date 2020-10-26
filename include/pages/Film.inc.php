@@ -16,6 +16,7 @@ $listeAvisFilm=$filmManager->getListeAvisFilm($_GET['film']);
 } ?><p><?php echo $film->getDescription() ?>
 </div>
 
+<?php if($_SESSION!=null){ ?>
 <div class="avisPerso">
   <p>Note : </p>
   <div class="rating rating2">
@@ -35,6 +36,8 @@ $listeAvisFilm=$filmManager->getListeAvisFilm($_GET['film']);
 </div>
 
 <?php
+}
+
 foreach ($listeAvisFilm as $avis){
   ?><div class="commentaire"><?php
   $utilisateur=$utilisateurManager->getUtilisateur($avis->getID_utilisateur());
