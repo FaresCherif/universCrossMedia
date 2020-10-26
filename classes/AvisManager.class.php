@@ -23,7 +23,7 @@ class AvisManager{
     }
 
     public function getAvis($id_Film,$id_utilisateur){
-        $sql = 'SELECT note from avisUtilisateur where ID_film=:id_film and ID_utilisateur=:id_utilisateur';
+        $sql = 'SELECT * from avisUtilisateur where ID_film=:id_film and ID_utilisateur=:id_utilisateur';
         $req=$this->db->prepare($sql);
         $req->bindValue(':id_film', $id_Film);
         $req->bindValue(':id_utilisateur', $id_utilisateur);
@@ -49,6 +49,17 @@ class AvisManager{
 
     }
 
+    public function updateCommentaire($id_Film,$id_utilisateur,$commentaire){
+        $sql = 'UPDATE avisUtilisateur SET commentaire=:commentaire  where ID_film=:id_film and ID_utilisateur=:id_utilisateur';
+        $req=$this->db->prepare($sql);
+        $req->bindValue(':id_film', $id_Film);
+        $req->bindValue(':id_utilisateur', $id_utilisateur);
+        $req->bindValue(':commentaire', $commentaire);
+
+
+        $req->execute();
+
+    }
 
 
 }

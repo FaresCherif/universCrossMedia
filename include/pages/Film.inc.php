@@ -11,6 +11,12 @@ $listeAvisFilm=$filmManager->getListeAvisFilm($_GET['film']);
     $avisManager->updateNote($_GET['film'],utilisateur()->getID(),$_GET['etoile']);
   }
 
+
+  if($_SESSION!=null&&$avisManager->avisExiste($_GET['film'],utilisateur()->getID())&&isset($_POST['commentaire'])){
+    $avisManager->updateCommentaire($_GET['film'],utilisateur()->getID(),$_POST['commentaire']);
+  }
+
+
  ?>
  <div class="filmDescription">
 
@@ -38,8 +44,18 @@ $listeAvisFilm=$filmManager->getListeAvisFilm($_GET['film']);
 </div>
 
 <div class="commentairePerso">
-  <p> Commentaire : </p>
-  <textarea></textarea>
+  <form method="post" action="#" class="connexion">
+    <label for="email-input">Commentaire : </label>
+    <input id="mail-input" name="commentaire"
+
+    <?php if($avisManager->avisExiste($_GET['film'],utilisateur()->getID())){
+      ?> value="<?php echo($avisManager->getAvis($_GET['film'],utilisateur()->getID())->getCommentaire());?>"<?php
+    }?>
+
+    required>
+    </input>
+  </form>
+
 </div>
 
 <?php
