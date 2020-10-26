@@ -34,8 +34,21 @@ class AvisManager{
         $res = $req->fetch(PDO::FETCH_OBJ);
 
         return new Avis($res);
+    }
+
+
+    public function updateNote($id_Film,$id_utilisateur,$note){
+        $sql = 'UPDATE avisUtilisateur SET note=:note  where ID_film=:id_film and ID_utilisateur=:id_utilisateur';
+        $req=$this->db->prepare($sql);
+        $req->bindValue(':id_film', $id_Film);
+        $req->bindValue(':id_utilisateur', $id_utilisateur);
+        $req->bindValue(':note', $note);
+
+
+        $req->execute();
 
     }
+
 
 
 }

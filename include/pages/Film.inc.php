@@ -7,6 +7,9 @@ $listeAvisFilm=$filmManager->getListeAvisFilm($_GET['film']);
 
 <?php
 
+  if($_SESSION!=null&&$avisManager->avisExiste($_GET['film'],utilisateur()->getID())&&isset($_GET['etoile'])){
+    $avisManager->updateNote($_GET['film'],utilisateur()->getID(),$_GET['etoile']);
+  }
 
  ?>
  <div class="filmDescription">
@@ -25,11 +28,11 @@ $listeAvisFilm=$filmManager->getListeAvisFilm($_GET['film']);
   <p>Note : </p>
   <div class="rating rating2">
 
-      <a href="index.php?page=49&etoile=5" title="Give 5 stars" <?php if($avisManager->avisExiste($_GET['film'],utilisateur()->getID())&&$avisManager->getAvis($_GET['film'],utilisateur()->getID())->getNote()==5||isset($_GET['etoile'])&&$_GET['etoile']==5){?>style="color: orange"<?php echo "x";} ?>>★</a>
-      <a href="index.php?page=49&etoile=4" title="Give 4 stars" <?php if($avisManager->avisExiste($_GET['film'],utilisateur()->getID())&&$avisManager->getAvis($_GET['film'],utilisateur()->getID())->getNote()>=4||isset($_GET['etoile'])&&$_GET['etoile']>=4){?>style="color: orange"<?php echo "x";} ?>>★</a>
-      <a href="index.php?page=49&etoile=3" title="Give 3 stars" <?php if($avisManager->avisExiste($_GET['film'],utilisateur()->getID())&&$avisManager->getAvis($_GET['film'],utilisateur()->getID())->getNote()>=3||isset($_GET['etoile'])&&$_GET['etoile']>=3){?>style="color: orange"<?php echo "x";} ?>>★</a>
-      <a href="index.php?page=49&etoile=2" title="Give 2 stars" <?php if($avisManager->avisExiste($_GET['film'],utilisateur()->getID())&&$avisManager->getAvis($_GET['film'],utilisateur()->getID())->getNote()>=2||isset($_GET['etoile'])&&$_GET['etoile']>=2){?>style="color: orange"<?php echo "x";} ?>>★</a>
-      <a href="index.php?page=49&etoile=1" title="Give 1 stars" <?php if($avisManager->avisExiste($_GET['film'],utilisateur()->getID())&&$avisManager->getAvis($_GET['film'],utilisateur()->getID())->getNote()>=1||isset($_GET['etoile'])&&$_GET['etoile']>=1){?>style="color: orange"<?php echo "x";} ?>>★</a>
+      <a href="index.php?page=5&film=<?php echo $_GET['film'] ?>&etoile=5" title="Give 5 stars" <?php if($avisManager->avisExiste($_GET['film'],utilisateur()->getID())&&$avisManager->getAvis($_GET['film'],utilisateur()->getID())->getNote()==5||isset($_GET['etoile'])&&$_GET['etoile']==5){?>style="color: orange"<?php echo "x";} ?>>★</a>
+      <a href="index.php?page=5&film=<?php echo $_GET['film'] ?>&etoile=4" title="Give 4 stars" <?php if($avisManager->avisExiste($_GET['film'],utilisateur()->getID())&&$avisManager->getAvis($_GET['film'],utilisateur()->getID())->getNote()>=4||isset($_GET['etoile'])&&$_GET['etoile']>=4){?>style="color: orange"<?php echo "x";} ?>>★</a>
+      <a href="index.php?page=5&film=<?php echo $_GET['film'] ?>&etoile=3" title="Give 3 stars" <?php if($avisManager->avisExiste($_GET['film'],utilisateur()->getID())&&$avisManager->getAvis($_GET['film'],utilisateur()->getID())->getNote()>=3||isset($_GET['etoile'])&&$_GET['etoile']>=3){?>style="color: orange"<?php echo "x";} ?>>★</a>
+      <a href="index.php?page=5&film=<?php echo $_GET['film'] ?>&etoile=2" title="Give 2 stars" <?php if($avisManager->avisExiste($_GET['film'],utilisateur()->getID())&&$avisManager->getAvis($_GET['film'],utilisateur()->getID())->getNote()>=2||isset($_GET['etoile'])&&$_GET['etoile']>=2){?>style="color: orange"<?php echo "x";} ?>>★</a>
+      <a href="index.php?page=5&film=<?php echo $_GET['film'] ?>&etoile=1" title="Give 1 stars" <?php if($avisManager->avisExiste($_GET['film'],utilisateur()->getID())&&$avisManager->getAvis($_GET['film'],utilisateur()->getID())->getNote()>=1||isset($_GET['etoile'])&&$_GET['etoile']>=1){?>style="color: orange"<?php echo "x";} ?>>★</a>
 
    </div>
 </div>
@@ -43,6 +46,7 @@ $listeAvisFilm=$filmManager->getListeAvisFilm($_GET['film']);
 }
 
 foreach ($listeAvisFilm as $avis){
+  if($_SESSION==null||$avis->getID_utilisateur()!=utilisateur()->getID()){
   ?><div class="commentaire"><?php
   $utilisateur=$utilisateurManager->getUtilisateur($avis->getID_utilisateur());
 
@@ -92,7 +96,7 @@ foreach ($listeAvisFilm as $avis){
 
 </div>
   <?php
-
+}
 }
 
 ?>
