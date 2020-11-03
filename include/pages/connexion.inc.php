@@ -47,7 +47,7 @@ if (utilisateurNEstPasConnecte()){
       <br>
       <br>
 
-      <a href="index.php?page=26">Pas encore inscrit ? Créez votre compte </a>
+      <a href="index.php?page=13">Pas encore inscrit ? Créez votre compte </a>
       <br>
       <br>
 

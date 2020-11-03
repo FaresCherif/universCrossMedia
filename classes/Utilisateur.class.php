@@ -5,6 +5,7 @@ class Utilisateur{
   private $ID;
   private $pseudo;
   private $mdp;
+  private $permission;
 
 
   public function __construct($valeurs = array()){
@@ -25,6 +26,9 @@ class Utilisateur{
         case 'mdp': $this->setMdp($valeur);
             break;
 
+        case 'permission': $this->setPermission($valeur);
+            break;
+
       }
     }
   }
@@ -41,6 +45,11 @@ class Utilisateur{
     return $this->mdp;
   }
 
+  public function getPermission(){
+    return $this->permission;
+  }
+
+
 
 
 
@@ -53,6 +62,9 @@ class Utilisateur{
   }
   public function setMdp($mdp){
     $this->mdp=$mdp;
+  }
+  public function setPermission($permission){
+    $this->permission=$permission;
   }
 
 

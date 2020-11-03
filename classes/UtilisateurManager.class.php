@@ -28,4 +28,15 @@ class UtilisateurManager{
 
         return new Utilisateur($res);
     }
+
+    public function addtUtilisateur($pseudo,$mdp){
+        $sql = 'INSERT INTO utilisateur (`pseudo`, `mdp`) VALUES (:pseudo,:mdp) ';
+        $req=$this->db->prepare($sql);
+
+        $req->bindValue(':pseudo', $pseudo);
+        $req->bindValue(':mdp', $mdp);
+
+        $req->execute();
+
+    }
 }
