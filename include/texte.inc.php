@@ -43,6 +43,25 @@ switch ($page) {
 		include_once('pages/inscription.inc.php');
 		break;
 
+	case 14:
+		include_once('pages/listeUtilisateur.inc.php');
+		break;
+
+	case 15:
+		include_once('pages/detailUtilisateur.inc.php');
+		break;
+
+	case 16:
+		include_once('pages/passerUtilisateurBasique.inc.php');
+		break;
+
+	case 17:
+		include_once('pages/passerUtilisateurIntermediaire.inc.php');
+		break;
+
+	case 18:
+		include_once('pages/passerUtilisateurAdministrateur.inc.php');
+		break;
 
 	default : include_once('pages/Accueil.inc.php');
 }

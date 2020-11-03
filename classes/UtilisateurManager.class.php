@@ -37,6 +37,21 @@ class UtilisateurManager{
         $req->bindValue(':mdp', $mdp);
 
         $req->execute();
+    }
 
+
+    public function getListeUtilisateur(){
+        $sql = 'SELECT * from utilisateur order by ID asc';
+        $req=$this->db->prepare($sql);
+        $req->execute();
+
+        $listeUtilisateur = array();
+        while ($res = $req->fetch(PDO::FETCH_OBJ)){
+            $listeUtilisateur[] = new Utilisateur($res);
+        }
+        $req->closeCursor();
+
+
+        return $listeUtilisateur;
     }
 }
