@@ -91,4 +91,22 @@ class UtilisateurManager{
         $req->bindValue(':id', $id);
         $req->execute();
     }
+
+    public function updatePseudo($id,$pseudo){
+        $sql = 'UPDATE utilisateur SET pseudo=:pseudo where ID=:id ';
+        $req=$this->db->prepare($sql);
+
+        $req->bindValue(':pseudo', $pseudo);
+        $req->bindValue(':id', $id);
+        $req->execute();
+    }
+
+    public function updateMdp($id,$mdp){
+        $sql = 'UPDATE utilisateur SET mdp=:mdp where ID=:id ';
+        $req=$this->db->prepare($sql);
+
+        $req->bindValue(':mdp', $mdp);
+        $req->bindValue(':id', $id);
+        $req->execute();
+    }
 }

@@ -63,6 +63,18 @@ switch ($page) {
 		include_once('pages/passerUtilisateurAdministrateur.inc.php');
 		break;
 
+	case 19:
+		include_once('pages/monCompte.inc.php');
+		break;
+
+	case 20:
+		include_once('pages/changerPseudo.inc.php');
+		break;
+
+	case 21:
+		include_once('pages/changerMdp.inc.php');
+		break;
+
 	default : include_once('pages/Accueil.inc.php');
 }
 
