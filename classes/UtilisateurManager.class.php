@@ -54,4 +54,28 @@ class UtilisateurManager{
 
         return $listeUtilisateur;
     }
+
+    public function passerUtilisateurAdministrateur($id){
+        $sql = 'UPDATE utilisateur SET permission=2 where ID=:id ';
+        $req=$this->db->prepare($sql);
+
+        $req->bindValue(':id', $id);
+        $req->execute();
+    }
+
+    public function passerUtilisateurIntermediaire($id){
+        $sql = 'UPDATE utilisateur SET permission=1 where ID=:id ';
+        $req=$this->db->prepare($sql);
+
+        $req->bindValue(':id', $id);
+        $req->execute();
+    }
+
+    public function passerUtilisateurBasique($id){
+        $sql = 'UPDATE utilisateur SET permission=0 where ID=:id ';
+        $req=$this->db->prepare($sql);
+
+        $req->bindValue(':id', $id);
+        $req->execute();
+    }
 }
