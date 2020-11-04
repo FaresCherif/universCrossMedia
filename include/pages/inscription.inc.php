@@ -1,9 +1,9 @@
 <?php
 
-if(isset($_POST['password']) && $_POST['password']==$_POST['passwordVerif'] && $utilisateurManager->getIdLogin($_POST['pseudo'])->getId()==null){
+if(isset($_POST['password']) && $_POST['password']==$_POST['passwordVerif'] && $utilisateurManager->getIdLogin($_POST['pseudo'])->getId()==null && $utilisateurManager->getIdMail($_POST['email'])->getId()==null){
   $pseudo = $_POST['pseudo'];
   $mdp = crypter($_POST['password']);
-  $utilisateurManager->addtUtilisateur($pseudo,$mdp);
+  $utilisateurManager->addtUtilisateur($pseudo,$mdp,$_POST['email']);
   $utilisateur=$utilisateurManager->getIdLogin($pseudo);
   connecter($utilisateur);
   echo '<meta http-equiv="refresh" content="0;url=index.php?page=0"/>';
@@ -11,6 +11,10 @@ if(isset($_POST['password']) && $_POST['password']==$_POST['passwordVerif'] && $
 
 if(isset($_POST['password']) && $_POST['password']==$_POST['passwordVerif'] && $utilisateurManager->getIdLogin($_POST['pseudo'])->getId()!=null){
   ajouterErreur("Cet identifiant est déjà pris");
+}
+
+if(isset($_POST['password']) && $_POST['password']==$_POST['passwordVerif'] && $utilisateurManager->getIdMail($_POST['email'])->getId()!=null){
+  ajouterErreur("Cet email est déjà associé à un compte");
 }
 
 if(isset($_POST['password']) && $_POST['password']!=$_POST['passwordVerif']){
@@ -26,6 +30,10 @@ afficherErreurs();
  ?>
 
 <form method="post" action="#" class="inscription">
+  <label for="email-input">Email : </label>
+  <input type="email" id="mail-input" name="email" required>
+  <br>
+
   <label for="email-input">Pseudo : </label>
   <input id="mail-input" name="pseudo" required>
   <br>

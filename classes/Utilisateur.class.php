@@ -6,6 +6,7 @@ class Utilisateur{
   private $pseudo;
   private $mdp;
   private $permission;
+  private $email;
 
 
   public function __construct($valeurs = array()){
@@ -29,6 +30,9 @@ class Utilisateur{
         case 'permission': $this->setPermission($valeur);
             break;
 
+        case 'email': $this->setEmail($valeur);
+            break;
+
       }
     }
   }
@@ -49,6 +53,9 @@ class Utilisateur{
     return $this->permission;
   }
 
+  public function getEmail(){
+    return $this->email;
+  }
 
 
 
@@ -65,6 +72,9 @@ class Utilisateur{
   }
   public function setPermission($permission){
     $this->permission=$permission;
+  }
+  public function setEmail($email){
+    $this->email=$email;
   }
 
 

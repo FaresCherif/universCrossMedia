@@ -3,8 +3,8 @@
 
 <?php
 if (utilisateurNEstPasConnecte()){
-  if(isset($_POST['pseudo'])){
-    $idPersonne = $utilisateurManager->getIdLogin($_POST['pseudo'])->getId();
+  if(isset($_POST['email'])){
+    $idPersonne = $utilisateurManager->getIdMail($_POST['email'])->getId();
 
     if ($idPersonne != null){
       $personne = $utilisateurManager->getUtilisateur($idPersonne);
@@ -38,8 +38,8 @@ if (utilisateurNEstPasConnecte()){
     ?>
 
     <form method="post" action="#" class="connexion">
-      <label for="email-input">Pseudo : </label>
-      <input id="mail-input" name="pseudo" required>
+      <label for="email-input">Email : </label>
+      <input type="email" id="mail-input" name="email" required>
       <br>
 
       <label for="password-input">Mot de passe : </label>

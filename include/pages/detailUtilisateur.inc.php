@@ -4,6 +4,11 @@
 
 <table>
   <tr>
+    <td>Email</td>
+    <td><?php echo $utilisateur->getEmail()?></td>
+  </tr>
+
+  <tr>
     <td>Pseudo</td>
     <td><?php echo $utilisateur->getPseudo()?></td>
   </tr>

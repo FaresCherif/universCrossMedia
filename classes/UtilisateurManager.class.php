@@ -29,10 +29,23 @@ class UtilisateurManager{
         return new Utilisateur($res);
     }
 
-    public function addtUtilisateur($pseudo,$mdp){
-        $sql = 'INSERT INTO utilisateur (`pseudo`, `mdp`) VALUES (:pseudo,:mdp) ';
+    public function getIdMail($mail){
+        $sql = 'SELECT * from utilisateur where email=:mail ';
+        $req=$this->db->prepare($sql);
+        $req->bindValue(':mail', $mail);
+
+        $req->execute();
+
+        $res = $req->fetch(PDO::FETCH_OBJ);
+
+        return new Utilisateur($res);
+    }
+
+    public function addtUtilisateur($pseudo,$mdp,$email){
+        $sql = 'INSERT INTO utilisateur (`email`,`pseudo`, `mdp`) VALUES (:email,:pseudo,:mdp) ';
         $req=$this->db->prepare($sql);
 
+        $req->bindValue(':email', $email);
         $req->bindValue(':pseudo', $pseudo);
         $req->bindValue(':mdp', $mdp);
 

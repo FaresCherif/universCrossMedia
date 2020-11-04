@@ -1,4 +1,6 @@
-
+<?php
+if (utilisateurEstConnecte()){
+  ?>
 <ul>
   <?php
   if (utilisateurEstConnecte() && utilisateur()->getPermission()==2){
@@ -7,3 +9,6 @@
   <?php
 } ?>
 </ul>
+
+<?php
+} ?>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 26 oct. 2020 à 15:15
+-- Généré le :  mer. 04 nov. 2020 à 01:47
 -- Version du serveur :  5.7.26
 -- Version de PHP :  7.2.18
 
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `avisutilisateur` (
   `ID_utilisateur` int(10) NOT NULL,
   `ID_film` int(10) NOT NULL,
   `note` int(5) DEFAULT NULL,
-  `commentaire` varchar(500) NOT NULL,
+  `commentaire` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`ID_utilisateur`,`ID_film`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -43,7 +43,9 @@ CREATE TABLE IF NOT EXISTS `avisutilisateur` (
 
 INSERT INTO `avisutilisateur` (`ID_utilisateur`, `ID_film`, `note`, `commentaire`) VALUES
 (1, 1, 2, 'c\'est bien'),
-(2, 1, 5, 'un chef d\'oeuvre');
+(2, 1, 5, 'un chef d\'oeuvre'),
+(1, 15, 3, NULL),
+(1, 21, 3, NULL);
 
 -- --------------------------------------------------------
 
@@ -378,18 +380,28 @@ INSERT INTO `univers` (`ID`, `name`, `description`, `image`) VALUES
 DROP TABLE IF EXISTS `utilisateur`;
 CREATE TABLE IF NOT EXISTS `utilisateur` (
   `ID` int(10) NOT NULL AUTO_INCREMENT,
+  `email` varchar(50) NOT NULL,
   `pseudo` varchar(50) NOT NULL,
-  `mdp` varchar(50) NOT NULL,
+  `mdp` varchar(500) NOT NULL,
+  `permission` int(2) NOT NULL DEFAULT '0',
   PRIMARY KEY (`ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `utilisateur`
 --
 
-INSERT INTO `utilisateur` (`ID`, `pseudo`, `mdp`) VALUES
-(1, 'arlo974', 'oui'),
-(2, 'boumboum', 'nope');
+INSERT INTO `utilisateur` (`ID`, `email`, `pseudo`, `mdp`, `permission`) VALUES
+(1, 'arlo@gmail.com', 'arlo974', '4f0f5f5192beb4983e26a3a4a3826b436d2c1fa60424b368595c62d3d521ed1c', 2),
+(3, 'exo@yahoo.com', 'exodus404', '8a7c35969f7f7bbee330a978e3907cf986a516b16753e6325e4a12f4ccbc2f91', 0),
+(4, 'lol@orange.com', 'lolie', '4f0f5f5192beb4983e26a3a4a3826b436d2c1fa60424b368595c62d3d521ed1c', 0),
+(5, 'neige@lol.com', 'petitpapanoel', 'b4482322b5c55b31e8f359264ced1d7bf5c45a868638774722bb04f613212d6d', 0),
+(6, 'damido@outlook.com', 'deco', 'aacc840f70ddf62d07a8c01f3d261513cdaf84e3b6473c23aef32c529b96dc95', 0),
+(7, 'ok@gmail.com', 'ak', 'e6a2ecba6bbe4e436e3cc0a75909004a1cf88d5ad6794bfbd152a25dc7e88487', 0),
+(8, 'lit@orange.com', 'dodo', 'cbe0dda63bf0606052fb48c73716e40e7f9ebd267369501093d3f4e235c629ac', 0),
+(9, 'po@outlook.com', 'popaul', '95e333065ca26d8398c8ce569feb128d3a09cb46eb9334c1fe741c04a149f799', 0),
+(18, 'non@non.com', 'ouioui', '695b981a3822af1c59f10946c153594c3a38724d5f15891b3a3af51d292094e2', 0),
+(19, 'lolipop@orange.com', 'exo', 'db3edc99daed83999d7a8e57cc1a454f321f6a233ed1265ca4ce3388dd78c91c', 0);
 
 -- --------------------------------------------------------
 
