@@ -13,13 +13,28 @@ foreach ($listeGenre as $genre){?>
 }
 ?>
 
+
+
 <h2> Univers </h2>
+
+<a href="index.php?page=4&univers=-1">Non rattaché à un univers</a><br>
 <?php
 foreach ($listeUnivers as $univers){?>
   <a href="index.php?page=4&univers=<?php echo $univers->getId() ?>"><?php
   echo($univers->getName());?></a><br><?php
 }
 
+if(utilisateurestconnecte()){
 
+if(utilisateur()->getPermission()>=2){
 
 ?>
+<ul>
+    <li><a href="index.php?page=23">Ajouter un univers</a></li>
+</ul>
+
+<?php
+}
+}
+
+ ?>

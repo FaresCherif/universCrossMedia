@@ -31,4 +31,14 @@ class UniversManager{
         return new Univers($res);
     }
 
+    public function ajouterUnivers($name,$description){
+        $sql = 'INSERT INTO univers (`name`, `description`) VALUES  (:name,:description) ';
+        $req=$this->db->prepare($sql);
+
+        $req->bindValue(':name', $name);
+        $req->bindValue(':description', $description);
+
+        $req->execute();
+    }
+
 }

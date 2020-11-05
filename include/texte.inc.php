@@ -79,6 +79,9 @@ switch ($page) {
 		include_once('pages/ajouterFilm.inc.php');
 		break;
 
+	case 23:
+		include_once('pages/ajouterUnivers.inc.php');
+		break;
 
 
 	default : include_once('pages/Accueil.inc.php');
