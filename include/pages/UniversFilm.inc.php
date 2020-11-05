@@ -18,9 +18,19 @@ $univers = $universManager->getUnivers($_GET['univers']);
     <a href="index.php?page=5&film=<?php echo $film->getId() ?>">
     <?php echo($film->getName()) ?></a><br><?php
   }
+
+
 }
 else{
   echo("Il n'y a pas encore de film dans cet univers. Soyez le premier à en rajouter !");
+}
+
+if(utilisateurEstConnecte() && utilisateur()->getPermission()!=0){
+  ?>
+  <ul>
+      <li><a href="index.php?page=22">Ajouter un film</a></li>
+  </ul>
+  <?php
 }
  ?>
 </div>

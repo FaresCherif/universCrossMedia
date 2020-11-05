@@ -65,6 +65,18 @@ class FilmManager{
         return new Film($res);
     }
 
+    public function getFilmNom($film_nom){
+        $sql = 'SELECT * from film where name=:name ';
+        $req=$this->db->prepare($sql);
+        $req->bindValue(':name', $film_nom);
+
+        $req->execute();
+
+        $res = $req->fetch(PDO::FETCH_OBJ);
+
+        return new Film($res);
+    }
+
     public function getListeAvisFilm($idFilm){
         $sql = 'SELECT * from film join avisutilisateur on film.ID=avisutilisateur.ID_film where avisutilisateur.ID_film=:id_film order by name asc';
         $req=$this->db->prepare($sql);
@@ -79,5 +91,16 @@ class FilmManager{
         $req->closeCursor();
 
         return $listeAvis;
+    }
+
+
+    public function ajouterFilm($name,$description){
+        $sql = 'INSERT INTO film (`name`, `description`) VALUES  (:name,:description) ';
+        $req=$this->db->prepare($sql);
+
+        $req->bindValue(':name', $name);
+        $req->bindValue(':description', $description);
+
+        $req->execute();
     }
 }

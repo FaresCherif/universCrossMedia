@@ -75,6 +75,12 @@ switch ($page) {
 		include_once('pages/changerMdp.inc.php');
 		break;
 
+	case 22:
+		include_once('pages/ajouterFilm.inc.php');
+		break;
+
+
+
 	default : include_once('pages/Accueil.inc.php');
 }
 

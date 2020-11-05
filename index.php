@@ -12,7 +12,8 @@ $genreManager=new GenreManager($db);
 $filmManager=new FilmManager($db);
 $utilisateurManager=new UtilisateurManager($db);
 $avisManager=new AvisManager($db);
-
+$filmGenreManager = new FilmGenreManager($db);
+$partofuniversManager = new partofuniversManager($db);
 
 
 ?>
