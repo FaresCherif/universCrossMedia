@@ -87,6 +87,21 @@ switch ($page) {
 		include_once('pages/modifierFilm.inc.php');
 		break;
 
+	case 25:
+		include_once('pages/ajouterJeuVideo.inc.php');
+		break;
+
+	case 26:
+		include_once('pages/JeuVideo.inc.php');
+		break;
+
+	case 27:
+		include_once('pages/modifierJeuVideo.inc.php');
+		break;
+
+	case 28:
+		include_once('pages/GenreJeuVideo.inc.php');
+		break;
 
 	default : include_once('pages/Accueil.inc.php');
 }

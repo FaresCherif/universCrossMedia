@@ -16,7 +16,7 @@ if (utilisateurNEstPasConnecte()){
 
 
           connecter($personne);
-          echo '<meta http-equiv="refresh" content="0;url=index.php?page=28"/>';
+          echo '<meta http-equiv="refresh" content="0;url=index.php?page=0"/>';
 
       }
       else{

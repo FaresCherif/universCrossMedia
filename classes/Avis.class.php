@@ -6,6 +6,7 @@ class Avis{
   private $commentaire;
   private $ID_utilisateur;
   private $ID_film;
+  private $ID_jeuVideo;
 
 
 
@@ -29,6 +30,9 @@ class Avis{
 
         case 'ID_film': $this->setID_film($valeur);
             break;
+
+        case 'ID_jeuVideo': $this->setID_jeuVideo($valeur);
+            break;
       }
     }
   }
@@ -49,6 +53,10 @@ class Avis{
     return $this->ID_film;
   }
 
+  public function getID_jeuVideo(){
+    return $this->ID_jeuVideo;
+  }
+
 
 
   public function setNote($note){
@@ -63,6 +71,9 @@ class Avis{
   }
   public function setID_film($ID_film){
     $this->ID_film=$ID_film;
+  }
+  public function setID_jeuVideo($ID_jeuVideo){
+    $this->ID_jeuVideo=$ID_jeuVideo;
   }
 
 }

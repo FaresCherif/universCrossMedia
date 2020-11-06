@@ -1,7 +1,7 @@
 <?php
   if(isset($_POST['titre'])){
-    if($filmManager->getFilmNom($_POST['titre'])->getId()){
-      ajouterErreur("Un film avec ce titre existe déjà");
+    if($jeuVideoManager->getJeuVideoNom($_POST['titre'])->getId()){
+      ajouterErreur("Un jeu avec ce titre existe déjà");
     }
     else{
       $image=null;
@@ -33,7 +33,7 @@
                       ajouterErreur($_FILES["photo"]["name"] . " existe déjà.");
                   } else{
 
-                      move_uploaded_file($_FILES["photo"]["tmp_name"], "image/film/" . $_FILES["photo"]["name"]);
+                      move_uploaded_file($_FILES["photo"]["tmp_name"], "image/jeu/" . $_FILES["photo"]["name"]);
                       echo "Votre fichier a été téléchargé avec succès.";
                       $image=$_FILES["photo"]["name"];
                   }
@@ -47,12 +47,11 @@
 
       echo($image);
 
-      $filmManager->ajouterFilm($_POST['titre'],$_POST['description'],$image);
-      $film=$filmManager->getFilmNom($_POST['titre']);
+      $jeuVideoManager->ajouterJeuVideo($_POST['titre'],$_POST['description'],$image);
+      $jeu=$jeuVideoManager->getJeuVideoNom($_POST['titre']);
+      $jeuvideo_genreManager->addJeuGenre($jeu->getId(),$_POST['genreId']);
 
-      $filmGenreManager->addFilmGenre($film->getId(),$_POST['genreId']);
-      $partofuniversManager->addFilmUnivers($film->getId(),$_POST['universId']);
-      ?> <meta http-equiv="refresh" content="0;url=index.php?page=5&film=<?php echo($film->getId()) ?>"/> <?php
+      $partofuniversManager->addJeuUnivers($jeu->getId(),$_POST['universId']);
     }
   }
 
@@ -71,7 +70,7 @@
 
 
   <?php
-    $listeGenre=$genreManager->getListeGenre();
+    $listeGenre=$genreJeuVideoManager->getListeGenreJeuVideo();
     $listeUnivers = $universManager->getListeUnivers();
     echo("Genre :");
   ?>

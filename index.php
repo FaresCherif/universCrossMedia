@@ -9,12 +9,14 @@ require_once("include/autoLoad.inc.php");
 $db = new MyPdo();
 $universManager=new UniversManager($db);
 $genreManager=new GenreManager($db);
+$genreJeuVideoManager=new GenreJeuVideoManager($db);
 $filmManager=new FilmManager($db);
+$jeuVideoManager=new JeuVideoManager($db);
 $utilisateurManager=new UtilisateurManager($db);
 $avisManager=new AvisManager($db);
 $filmGenreManager = new FilmGenreManager($db);
 $partofuniversManager = new partofuniversManager($db);
-
+$jeuvideo_genreManager=new jeuvideo_genreManager($db);
 
 ?>
 

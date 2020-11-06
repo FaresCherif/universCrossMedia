@@ -17,7 +17,7 @@ $listeAvisFilm=$filmManager->getListeAvisFilm($_GET['film']);
   }
 
   if($_SESSION!=null&&!$avisManager->avisExiste($_GET['film'],utilisateur()->getID())&&isset($_GET['etoile'])){
-    $avisManager->ajouterNote($_GET['film'],utilisateur()->getID(),$_GET['etoile']);
+    $avisManager->ajouterNoteFilm($_GET['film'],utilisateur()->getID(),$_GET['etoile']);
   }
 
 
