@@ -32,7 +32,11 @@ $listeAvisFilm=$filmManager->getListeAvisFilm($_GET['film']);
 
 <?php
 if(utilisateurestconnecte()){
-  
+  ?><br>
+  <ul>
+    <li><a href="index.php?page=24&film=<?php echo $_GET['film'] ?>">Modifier le film</a></li>
+  </ul>
+  <?php
 }
 
  ?>

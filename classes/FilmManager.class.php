@@ -103,4 +103,16 @@ class FilmManager{
 
         $req->execute();
     }
+
+    public function updateFilm($id,$name,$description,$image){
+        $sql = 'UPDATE film set `image`=:image, `name`=:name,`description`=:description where `ID`=:ID ';
+        $req=$this->db->prepare($sql);
+
+        $req->bindValue(':name', $name);
+        $req->bindValue(':image', $image);
+        $req->bindValue(':ID', $id);
+        $req->bindValue(':description', $description);
+
+        $req->execute();
+    }
 }
