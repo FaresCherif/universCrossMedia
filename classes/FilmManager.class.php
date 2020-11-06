@@ -94,11 +94,12 @@ class FilmManager{
     }
 
 
-    public function ajouterFilm($name,$description){
-        $sql = 'INSERT INTO film (`name`, `description`) VALUES  (:name,:description) ';
+    public function ajouterFilm($name,$description,$image){
+        $sql = 'INSERT INTO film (`name`, `description`,`image`) VALUES  (:name,:description,:image) ';
         $req=$this->db->prepare($sql);
 
         $req->bindValue(':name', $name);
+        $req->bindValue(':image', $image);
         $req->bindValue(':description', $description);
 
         $req->execute();

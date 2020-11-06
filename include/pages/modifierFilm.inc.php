@@ -9,7 +9,9 @@ if(isset($_POST['titre'])){
     $image=$filmManager->getFilm($_GET['film'])->getImage();
 
     // Vérifier si le formulaire a été soumis
-    if(isset($_POST['photo'])){
+    if(isset($_FILES['photo'])){
+
+
         // Vérifie si le fichier a été uploadé sans erreur.
         if(isset($_FILES["photo"]) && $_FILES["photo"]["error"] == 0){
             $allowed = array("jpg" => "image/jpg", "jpeg" => "image/jpeg", "gif" => "image/gif", "png" => "image/png");
@@ -44,7 +46,7 @@ if(isset($_POST['titre'])){
     }
 
     $filmManager->updateFilm($_GET['film'],$_POST['titre'],$_POST['description'],$image);
-  ?>   <meta http-equiv="refresh" content="0;url=index.php?page=5&film=<?php echo($_GET['film']) ?>"/> <?php
+    ?> <meta http-equiv="refresh" content="0;url=index.php?page=5&film=<?php echo($_GET['film']) ?>"/> <?php
   }
 }
 
@@ -63,7 +65,6 @@ $film=$filmManager->getFilm($_GET['film']);
     } ?><p><textarea rows="30" cols="100" name="description"><?php echo $film->getDescription() ?></textarea></p>
   </div>
 
-  <h2>Upload Fichier</h2>
   <label for="fileUpload">Fichier:</label>
   <input type="file" name="photo" id="fileUpload">
   <p><strong>Note:</strong> Seuls les formats .jpg, .jpeg, .jpeg, .gif, .png sont autorisés jusqu'à une taille maximale de 5 Mo.</p>
