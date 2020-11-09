@@ -103,6 +103,18 @@ switch ($page) {
 		include_once('pages/GenreJeuVideo.inc.php');
 		break;
 
+	case 29:
+		include_once('pages/lienUnivers.inc.php');
+		break;
+
+	case 30:
+		include_once('pages/supprimerLien.inc.php');
+		break;
+
+	case 31:
+		include_once('pages/modifierLien.inc.php');
+		break;
+
 	default : include_once('pages/Accueil.inc.php');
 }
 

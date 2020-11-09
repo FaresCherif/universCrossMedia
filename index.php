@@ -17,6 +17,7 @@ $avisManager=new AvisManager($db);
 $filmGenreManager = new FilmGenreManager($db);
 $partofuniversManager = new partofuniversManager($db);
 $jeuvideo_genreManager=new jeuvideo_genreManager($db);
+$lienuniversManager=new lienuniversManager($db);
 
 ?>
 

@@ -40,5 +40,48 @@ if(utilisateurEstConnecte() && utilisateur()->getPermission()!=0){
   </ul>
   <?php
 }
- ?>
+
+?>
+<div id="lienUniversTitrePrincipal">
+
+<h2>Théories de liens avec d'autres univers</h2>
+
 </div>
+
+<form method="post">
+
+<?php
+if($lienuniversManager->getListeLienUnivers($_GET['univers'])!=null){
+  $listeLienUnivers=$lienuniversManager->getListeLienUnivers($_GET['univers']);
+
+  foreach ($listeLienUnivers as $lien) {
+    ?>
+    <div id="lienUniversTitre">
+      <h3><?php echo($universManager->getUnivers($lien->getID_univers1())->getName())?> - <?php echo($universManager->getUnivers($lien->getID_univers2())->getName()); ?></h3>
+    </div>
+
+    <div id="lienUnivers">
+      <p><?php echo($lien->getDescription()); ?></p>
+      <ul>
+          <li><a href="index.php?page=31&univers1=<?php echo($lien->getID_univers1()) ?>&univers2=<?php echo($lien->getID_univers2()) ?>">Modifier une théorie</a></li>
+          <li><a href="index.php?page=30&univers1=<?php echo($lien->getID_univers1()) ?>&univers2=<?php echo($lien->getID_univers2()) ?>">Supprimer une théorie</a></li>
+     </ul>
+
+
+    </div>
+    <br>
+    <?php
+
+  }
+
+}
+else{
+  echo("Cette univers n'a pas de théorie le reliant à un autre.");
+}
+
+ ?>
+ <ul>
+     <li><a href="index.php?page=29&univers=<?php echo($_GET['univers']) ?>">Ajouter une théorie</a></li>
+</ul>
+
+</form>
