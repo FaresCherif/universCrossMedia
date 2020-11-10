@@ -62,11 +62,12 @@ if($lienuniversManager->getListeLienUnivers($_GET['univers'])!=null){
 
     <div id="lienUnivers">
       <p><?php echo($lien->getDescription()); ?></p>
-      <ul>
-          <li><a href="index.php?page=31&univers1=<?php echo($lien->getID_univers1()) ?>&univers2=<?php echo($lien->getID_univers2()) ?>">Modifier une théorie</a></li>
-          <li><a href="index.php?page=30&univers1=<?php echo($lien->getID_univers1()) ?>&univers2=<?php echo($lien->getID_univers2()) ?>">Supprimer une théorie</a></li>
-     </ul>
-
+      <?php if(utilisateurEstConnecte()){ ?>
+        <ul>
+            <li><a href="index.php?page=31&univers1=<?php echo($lien->getID_univers1()) ?>&univers2=<?php echo($lien->getID_univers2()) ?>">Modifier une théorie</a></li>
+            <li><a href="index.php?page=30&univers1=<?php echo($lien->getID_univers1()) ?>&univers2=<?php echo($lien->getID_univers2()) ?>">Supprimer une théorie</a></li>
+       </ul>
+       <?php } ?>
 
     </div>
     <br>
@@ -79,9 +80,10 @@ else{
   echo("Cette univers n'a pas de théorie le reliant à un autre.");
 }
 
+if(utilisateurEstConnecte()){
  ?>
  <ul>
      <li><a href="index.php?page=29&univers=<?php echo($_GET['univers']) ?>">Ajouter une théorie</a></li>
 </ul>
-
+   <?php } ?>
 </form>

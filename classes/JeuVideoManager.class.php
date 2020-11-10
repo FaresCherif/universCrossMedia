@@ -106,4 +106,17 @@ class JeuVideoManager{
 
         return $listeAvis;
     }
+
+
+    public function updateJeuVideo($id,$name,$description,$image){
+        $sql = 'UPDATE jeuvideo SET `name`=:name, `description`=:description,`image`=:image WHERE `ID`=:id';
+        $req=$this->db->prepare($sql);
+
+        $req->bindValue(':id', $id);
+        $req->bindValue(':name', $name);
+        $req->bindValue(':image', $image);
+        $req->bindValue(':description', $description);
+
+        $req->execute();
+    }
 }
