@@ -5,13 +5,19 @@ $listeGenre =$genreJeuVideoManager->getListeGenreJeuVideo();
 ?>
 
 <h2> Genre </h2>
-
+<div id="boutton">
+  <ul>
 <?php
 foreach ($listeGenre as $genre){?>
-  <a href="index.php?page=28&genre=<?php echo $genre->getId() ?>">
-  <?php echo($genre->getName()) ?><br></a><?php
+  <li>
+
+    <a href="index.php?page=28&genre=<?php echo $genre->getId() ?>">
+    <?php echo($genre->getName()) ?><br></a>
+  </li>
+  <?php
 }
-?>
+?></ul>
+</div>
 
 
 

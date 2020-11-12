@@ -52,6 +52,8 @@
       $jeuvideo_genreManager->addJeuGenre($jeu->getId(),$_POST['genreId']);
 
       $partofuniversManager->addJeuUnivers($jeu->getId(),$_POST['universId']);
+      ?> <meta http-equiv="refresh" content="0;url=index.php?page=26&jeu=<?php echo($jeu->getId()) ?>"/> <?php
+
     }
   }
 
@@ -105,5 +107,5 @@
 
   <br>
   <br>
-  <button type="submit">Valider </button>
+  <button id="bouttonValider" type="submit">Valider </button>
 </form>

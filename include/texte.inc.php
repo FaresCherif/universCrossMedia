@@ -7,6 +7,8 @@ else{
 }
 
 switch ($page) {
+
+
 	case 0:
 		include_once('pages/Accueil.inc.php');
 	break;
@@ -113,6 +115,10 @@ switch ($page) {
 
 	case 31:
 		include_once('pages/modifierLien.inc.php');
+		break;
+
+	case 32:
+		include_once('pages/modifierUnivers.inc.php');
 		break;
 
 	default : include_once('pages/Accueil.inc.php');

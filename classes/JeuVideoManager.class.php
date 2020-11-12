@@ -119,4 +119,31 @@ class JeuVideoManager{
 
         $req->execute();
     }
+
+
+
+    public function getJeuGenre($jeu_nom){
+        $sql = 'SELECT genrejeuVideo.name from jeuvideo join jeuvideo_genre on jeuvideo.ID=jeuvideo_genre.ID_jeuvideo join genrejeuVideo on jeuvideo_genre.ID_genreJeuVideo=genrejeuVideo.ID where jeuvideo.name=:name ';
+        $req=$this->db->prepare($sql);
+        $req->bindValue(':name', $jeu_nom);
+
+        $req->execute();
+
+        $res = $req->fetch(PDO::FETCH_OBJ);
+
+        return new JeuVideo($res);
+    }
+
+
+    public function getJeuUnivers($jeu_nom){
+        $sql = 'SELECT univers.name from jeuvideo join partofunivers on jeuvideo.ID=partofunivers.ID_jeuvideo join univers on partofunivers.ID_univers=univers.ID where jeuvideo.name=:name ';
+        $req=$this->db->prepare($sql);
+        $req->bindValue(':name', $jeu_nom);
+
+        $req->execute();
+
+        $res = $req->fetch(PDO::FETCH_OBJ);
+
+        return new JeuVideo($res);
+    }
 }

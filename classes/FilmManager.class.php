@@ -116,4 +116,29 @@ class FilmManager{
 
         $req->execute();
     }
+
+    public function getFilmGenre($film_nom){
+        $sql = 'SELECT genre.name from film join film_genre on film.ID=film_genre.ID_film join genre on film_genre.ID_genre=genre.ID where film.name=:name ';
+        $req=$this->db->prepare($sql);
+        $req->bindValue(':name', $film_nom);
+
+        $req->execute();
+
+        $res = $req->fetch(PDO::FETCH_OBJ);
+
+        return new Film($res);
+    }
+
+
+    public function getFilmUnivers($film_nom){
+        $sql = 'SELECT univers.name from film join partofunivers on film.ID=partofunivers.ID_film join univers on partofunivers.ID_univers=univers.ID where film.name=:name ';
+        $req=$this->db->prepare($sql);
+        $req->bindValue(':name', $film_nom);
+
+        $req->execute();
+
+        $res = $req->fetch(PDO::FETCH_OBJ);
+
+        return new Film($res);
+    }
 }

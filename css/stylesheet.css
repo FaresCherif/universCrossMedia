@@ -246,10 +246,10 @@ header a {
   padding : 10px 15px 10px 15px;
   border-radius : 5px;
 }
- header textarea{
-   margin-top: 40px;
-   width : 500px;
-   height: 20px;
+ header input{
+   margin-top: 60px;
+   width : 600px;
+   height: 40px;
  }
 
 
@@ -387,4 +387,73 @@ footer nav ul{
   text-align : center;
   font-size : 1.2em;
   color : rgb(90, 90, 90);
+}
+
+#filmDescription img{
+  width:10px;
+}
+
+
+
+
+#boutton {
+    margin-bottom: 1em;
+    font-family: 'Trebuchet MS', 'Lucida Grande',
+       Verdana, Lucida, Geneva, Helvetica,
+       Arial, sans-serif;
+    color: #333;
+    margin-right: 30px;
+   }
+
+#boutton ul {
+   list-style: none;
+   margin:0;
+  padding:0;
+
+
+}
+
+#boutton li {
+   margin: 0;
+   display: inline;
+
+}
+
+#boutton ul li a {
+    display: block;
+    padding: 5px 5px 5px 0.5em;
+    border-left: 10px solid #1958b7;
+    border-right: 10px solid #508fc4;
+    background-color: #2175bc;
+    color: #fff;
+    text-decoration: none;
+    width:100%;
+    background-color: #90bade;
+}
+
+#boutton ul li a {
+    width: auto;
+}
+
+#boutton ul li a:hover {
+    border-left: 10pxsolid #1c64d1;
+    border-right: 10px solid #5ba3e0;
+    background-color: #2586d7;
+    color: #fff;
+    border-bottom: 0px;
+}
+
+
+
+button{
+  color : white;
+  background-color: #001233;
+  border : none;
+  font-weight : bold;
+  font-size : 1em;
+  width : 20px;
+}
+
+#bouttonValider{
+    width:80px;
 }

@@ -6,13 +6,18 @@ $listeGenre =$genreManager->getListeGenre();
 
 <h2> Genre </h2>
 
+<div id="boutton">
+  <ul>
 <?php
 foreach ($listeGenre as $genre){?>
-  <a href="index.php?page=3&genre=<?php echo $genre->getId() ?>">
-  <?php echo($genre->getName()) ?><br></a><?php
+  <li>
+    <a href="index.php?page=3&genre=<?php echo $genre->getId() ?>">
+    <?php echo($genre->getName()) ?></a>
+  </li>
+  <?php
 }
-?>
-
+?></ul>
+</div>
 
 
 <h2> Univers </h2>

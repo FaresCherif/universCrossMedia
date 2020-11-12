@@ -12,19 +12,49 @@ $univers = $universManager->getUnivers($_GET['univers']);
 ?><h2><?php echo $univers->getName() ?></h2>
 
 <div class="description"><?php echo $univers->getDescription() ?></div><br></div>
+<?php if($_GET['univers']!=-1){ ?>
+<ul>
+  <li><a href="index.php?page=32&univers=<?php echo($_GET['univers']) ?>">Modifier univers</a></li>
+</ul>
+<?php }
+?>
+
+
+
+
 
 <?php if($listeFilmUnivers!=null || $listeJeuUnivers!=null){
+
+  ?>
+  <table id="rwd-table">
+    <tr>
+      <th>Titre de film</th>
+      <th>Type media</th>
+      <th>Genre</th>
+    </tr><?php
+
   foreach ($listeFilmUnivers as $film){?>
-    <a href="index.php?page=5&film=<?php echo $film->getId() ?>">
-    <?php echo($film->getName()) ?></a><br><?php
+     <tr> <th><a href="index.php?page=5&film=<?php echo $film->getId() ?>">
+    <?php echo($film->getName()) ?></a></th>
+    <th> Film </th>
+    <th><?php echo($filmManager->getFilmGenre($film->getName()))->getName() ?></th></tr>
+    <?php
   }
 
   foreach ($listeJeuUnivers as $jeu){ ?>
+    <tr>
+    <th><a href="index.php?page=26&jeu=<?php echo $jeu->getId() ?>">
+    <?php echo($jeu->getName()) ?></a><br></th>
+    <th> Jeu video </th>
 
-    <a href="index.php?page=26&jeu=<?php echo $jeu->getId() ?>">
-    <?php echo($jeu->getName()) ?></a><br><?php
+    <th>
+      <?php echo($jeuVideoManager->getJeuGenre($jeu->getName()))->getName() ?>
+    </th>
+  </tr><?php
+
+
   }
-
+  ?> </table> <?php
 
 }
 else{
